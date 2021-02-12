@@ -31,7 +31,7 @@ ENTRYPOINT ["gunicorn", "-b", ":8080", "main:APP"]
 #       - system:nodes
 #       rolearn: arn:aws:iam::195992782325:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-12G0U5N13NWE6
 #       username: system:node:{{EC2PrivateDNSName}}
-#     - rolearn: arn:aws:iam::195992782325:role/UdacityFlaskDeployCBKubectlRole
-#       username: build
-#       groups:
-#       - system:masters
+# - rolearn: arn:aws:iam::195992782325:role/UdacityFlaskDeployCBKubectlRole
+#   username: build
+#   groups:
+#   - system:masters
