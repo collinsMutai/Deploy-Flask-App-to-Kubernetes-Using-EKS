@@ -35,3 +35,6 @@ ENTRYPOINT ["gunicorn", "-b", ":8080", "main:APP"]
 #   username: build
 #   groups:
 #   - system:masters
+# export URL="a950b02b9a39c402f9db8732f9fd45c0-61976539.us-east-1.elb.amazonaws.com"
+# export TOKEN=`curl -d '{"email":"wolf@thedoor.com","password":"huff-puff"}' -H "Content-Type: application/json" -X POST $URL/auth  | jq -r '.token'`
+# curl --request GET $URL:80/contents -H "Authorization: Bearer ${TOKEN}" | jq
