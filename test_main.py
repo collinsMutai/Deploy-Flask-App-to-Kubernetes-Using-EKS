@@ -19,7 +19,7 @@ def client():
     Client feature
     """
     os.environ["JWT_SECRET"] = SECRET
-    main.APP.config["TESTING"] = False
+    main.APP.config["TESTING"] = True
     client = main.APP.test_client()
 
     yield client
@@ -37,6 +37,6 @@ def test_auth(client):
         "/auth", data=json.dumps(body), content_type="application/json"
     )
 
-    assert response.status_code == 200
+    assert response.status_code == False
     token = response.json["token"]
     assert token is not None
