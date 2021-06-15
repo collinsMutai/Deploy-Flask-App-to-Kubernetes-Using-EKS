@@ -25,6 +25,9 @@ ENTRYPOINT ["gunicorn", "-b", ":8080", "main:APP"]
 # kubectl get nodes
 # eksctl delete cluster simple-jwt-api
 
+
+# kubectl get -n kube-system configmap/aws-auth -o yaml > ./aws-auth-patch.yml
+# kubectl patch configmap/aws-auth -n kube-system --patch "$(cat ./aws-auth-patch.yml)"
 #   mapRoles: |
 #     - groups:
 #       - system:bootstrappers
